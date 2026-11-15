@@ -1,0 +1,91 @@
+============================================================
+TEST SET 1: Typical data (10, 20, 30, 40, 50)
+============================================================
+   List: HEAD -> NULL   (size = 0)
+-> Insert 30 at the END
+   List: HEAD -> 30 -> NULL   (size = 1)
+-> Insert 10 at the BEGINNING
+   List: HEAD -> 10 -> 30 -> NULL   (size = 2)
+-> Insert 20 in the MIDDLE
+   List: HEAD -> 10 -> 20 -> 30 -> NULL   (size = 3)
+-> Insert 50 at the END
+   List: HEAD -> 10 -> 20 -> 30 -> 50 -> NULL   (size = 4)
+-> Insert 40 at POSITION 4
+   List: HEAD -> 10 -> 20 -> 30 -> 40 -> 50 -> NULL   (size = 5)
+-> Delete node at POSITION 3
+   Removed value 30
+   List: HEAD -> 10 -> 20 -> 40 -> 50 -> NULL   (size = 4)
+-> Delete node with VALUE 10
+   Removed value 10
+   List: HEAD -> 20 -> 40 -> 50 -> NULL   (size = 3)
+-> Delete node with VALUE 50
+   Removed value 50
+   List: HEAD -> 20 -> 40 -> NULL   (size = 2)
+-> Delete node with VALUE 99
+   ERROR: Delete failed: value 99 was not found in the list.
+   List: HEAD -> 20 -> 40 -> NULL   (size = 2)
+
+============================================================
+TEST SET 2: Error handling on an empty list and invalid positions
+============================================================
+   List: HEAD -> NULL   (size = 0)
+-> Delete node at POSITION 1
+   ERROR: Delete failed: the list is empty.
+   List: HEAD -> NULL   (size = 0)
+-> Delete node with VALUE 5
+   ERROR: Delete failed: the list is empty.
+   List: HEAD -> NULL   (size = 0)
+-> Insert 5 in the MIDDLE
+   List: HEAD -> 5 -> NULL   (size = 1)
+-> Insert 1 at POSITION 0
+   ERROR: Insert failed: position 0 is invalid (valid range is 1 to 2).
+   List: HEAD -> 5 -> NULL   (size = 1)
+-> Insert 1 at POSITION 5
+   ERROR: Insert failed: position 5 is invalid (valid range is 1 to 2).
+   List: HEAD -> 5 -> NULL   (size = 1)
+-> Insert 7 at POSITION 2
+   List: HEAD -> 5 -> 7 -> NULL   (size = 2)
+-> Delete node at POSITION 3
+   ERROR: Delete failed: position 3 is invalid (valid range is 1 to 2).
+   List: HEAD -> 5 -> 7 -> NULL   (size = 2)
+-> Delete node at POSITION 1
+   Removed value 5
+   List: HEAD -> 7 -> NULL   (size = 1)
+-> Delete node at POSITION 1
+   Removed value 7
+   List: HEAD -> NULL   (size = 0)
+-> Delete node at POSITION 1
+   ERROR: Delete failed: the list is empty.
+   List: HEAD -> NULL   (size = 0)
+
+============================================================
+TEST SET 3: Negative numbers, zero and duplicate values
+============================================================
+-> Insert 0 at the BEGINNING
+   List: HEAD -> 0 -> NULL   (size = 1)
+-> Insert -15 at the BEGINNING
+   List: HEAD -> -15 -> 0 -> NULL   (size = 2)
+-> Insert 8 at the END
+   List: HEAD -> -15 -> 0 -> 8 -> NULL   (size = 3)
+-> Insert 8 at the END
+   List: HEAD -> -15 -> 0 -> 8 -> 8 -> NULL   (size = 4)
+-> Insert -3 in the MIDDLE
+   List: HEAD -> -15 -> 0 -> -3 -> 8 -> 8 -> NULL   (size = 5)
+-> Insert 100 at POSITION 4
+   List: HEAD -> -15 -> 0 -> -3 -> 100 -> 8 -> 8 -> NULL   (size = 6)
+-> Insert 42 in the MIDDLE
+   List: HEAD -> -15 -> 0 -> -3 -> 42 -> 100 -> 8 -> 8 -> NULL   (size = 7)
+-> Delete node with VALUE 8
+   Removed value 8
+   List: HEAD -> -15 -> 0 -> -3 -> 42 -> 100 -> 8 -> NULL   (size = 6)
+-> Delete node at POSITION 6
+   Removed value 8
+   List: HEAD -> -15 -> 0 -> -3 -> 42 -> 100 -> NULL   (size = 5)
+-> Delete node with VALUE -15
+   Removed value -15
+   List: HEAD -> 0 -> -3 -> 42 -> 100 -> NULL   (size = 4)
+-> Delete node at POSITION 2
+   Removed value -3
+   List: HEAD -> 0 -> 42 -> 100 -> NULL   (size = 3)
+
+All tests finished. Every node was freed by the destructor.

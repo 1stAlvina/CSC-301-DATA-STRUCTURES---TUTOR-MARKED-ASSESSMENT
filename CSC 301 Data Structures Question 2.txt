@@ -1,0 +1,45 @@
+============================================================
+1. FACTORIAL
+============================================================
+factorial(0) = 1
+factorial(1) = 1
+factorial(5) = 120
+factorial(10) = 3628800
+factorial(20) = 2432902008176640000
+factorial(21) = ERROR: factorial of 21 is too large for unsigned long long (max is 20!)
+factorial(-4) = ERROR: factorial is not defined for negative numbers
+
+============================================================
+2. FIBONACCI SEQUENCE
+============================================================
+First 0 Fibonacci numbers: (none)
+First 1 Fibonacci numbers: 0
+First 2 Fibonacci numbers: 0, 1
+First 10 Fibonacci numbers: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+First 20 Fibonacci numbers: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181
+First -3 Fibonacci numbers: ERROR: n must not be negative
+
+============================================================
+3. STRING REVERSAL
+============================================================
+reverse("") = ""
+reverse("A") = "A"
+reverse("data") = "atad"
+reverse("recursion") = "noisrucer"
+reverse("racecar") = "racecar"
+reverse("CSC 301 TMA!") = "!AMT 103 CSC"
+
+============================================================
+4. BINARY SEARCH
+============================================================
+Search for 5 in [] -> not found (returned -1)
+Search for 7 in [7] -> found at index 0
+Search for 3 in [7] -> not found (returned -1)
+Search for 23 in [2, 5, 8, 12, 16, 23, 38, 56, 72, 91] -> found at index 5
+Search for 2 in [2, 5, 8, 12, 16, 23, 38, 56, 72, 91] -> found at index 0
+Search for 91 in [2, 5, 8, 12, 16, 23, 38, 56, 72, 91] -> found at index 9
+Search for 50 in [2, 5, 8, 12, 16, 23, 38, 56, 72, 91] -> not found (returned -1)
+Search for -12 in [-40, -12, -3, 0, 9, 27] -> found at index 1
+Search for 0 in [-40, -12, -3, 0, 9, 27] -> found at index 3
+
+All recursion tests finished.
